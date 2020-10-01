@@ -1,0 +1,27 @@
+## section 3.15 Numeric and Date data type SRFs
+
+#Round function
+ROUND(number, places)
+
+select round(107.088, 2) from dual
+
+#trunc(number, places)
+
+select trunc(107.9387878, 3) from dual
+
+##date time functions
+
+select sysdate from dual #returns current date of the server
+
+select systimestamp from dual
+
+select add_months('11/17/2012', -3) from dual
+select add_months(sysdate, -3) from dual
+
+select months_between('12/15/2012', sysdate) from dual
+
+select trunc(systimestamp) from dual
+select trunc(systimestamp, 'MONTH') from dual #takes you back to the start 
+
+select ename, hiredate, trunc(hiredate, 'MONTH') from emp
+where trunc(hiredate, 'YEAR') = '01/01/1982'

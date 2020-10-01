@@ -1,0 +1,10 @@
+## section 3.18: Concluding SRFs & NULL/NULLIF functions
+
+select ename, job, sal, comm from emp
+where comm is NULL
+
+select ename, job, sal, nvl(to_char(comm), 'NO DATA FOUND') from emp
+where comm is NULL
+
+#revisit 
+select ename, length(ename), nvl(nullif(to_char(length(ename)), to_char(5)), 'Length = 5') as Result from emp
